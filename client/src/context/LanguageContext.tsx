@@ -13,10 +13,18 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(undefine
 
 const translations = {
     en: {
-
+        'nav.home': 'home',
+        'nav.about': 'about',
+        'nav.skills': 'skills',
+        'nav.projects': 'projects',
+        'nav.contact': 'contact',
     },
     ru: {
-
+        'nav.home': 'главная',
+        'nav.about': 'обо мне',
+        'nav.skills': 'навыки',
+        'nav.projects': 'проекты',
+        'nav.contact': 'контакты',
     }
 };
 
