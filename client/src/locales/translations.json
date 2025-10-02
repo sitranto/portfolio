@@ -69,6 +69,29 @@
     "about.feature4.description": "Постоянно учусь и слежу за актуальными трендами в индустрии.",
 
     "skills.title": "Навыки и технологии",
-    "skills.description": "Технологии и инструменты, которые я использую для разработки"
+    "skills.description": "Технологии и инструменты, которые я использую для разработки",
+
+    "contact.title": "Связаться со мной",
+    "contact.description": "Я всегда заинтересован в новых возможностях и интересных проектах. Давайте обсудим, как мы можем работать вместе!",
+    "contact.formTitle": "Отправьте мне сообщение",
+    "contact.firstName": "Имя",
+    "contact.firstNamePlaceholder": "Ваше имя",
+    "contact.lastName": "Фамилия",
+    "contact.lastNamePlaceholder": "Ваша фамилия",
+    "contact.email": "Email",
+    "contact.emailPlaceholder": "ваш.email@example.com",
+    "contact.subject": "Тема",
+    "contact.subjectPlaceholder": "Обсуждение проекта",
+    "contact.message": "Сообщение",
+    "contact.messagePlaceholder": "Расскажите мне о вашем проекте...",
+    "contact.send": "Отправить сообщение",
+    "contact.connectTitle": "Давайте свяжемся",
+    "contact.connectDescription": "В настоящее время я доступен для фриланс-работы и частичной занятости. Есть ли у вас есть проект или просто хотите поговорить о технологиях, я буду рад поговорить с вами.",
+    "contact.followMe": "Подписывайтесь",
+    "contact.phone.label": "Телефон",
+    "contact.phone.value": "+7 (993) 976-13-23",
+    "contact.location.label": "Местоположение",
+    "contact.location.value": "Санкт-Петербург, Россия",
+    "contact.footer": "© 2025 Анатолий Латышев. Разработано с ❤️ используя Next.js и Tailwind CSS."
   }
 }

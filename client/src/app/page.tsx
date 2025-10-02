@@ -3,6 +3,7 @@ import NavBar from "@/widgets/NavBar";
 import HeroSection from "@/widgets/HeroSection";
 import AboutSection from "@/widgets/AboutSection";
 import SkillsSection from "@/widgets/SkillsSection";
+import {ContactSection} from "@/widgets/ContactSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
             <HeroSection/>
             <AboutSection/>
             <SkillsSection/>
+            <ContactSection/>
         </div>
       </LanguageProvider>
   );
