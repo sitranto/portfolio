@@ -18,6 +18,15 @@ const translations = {
         'nav.skills': 'skills',
         'nav.projects': 'projects',
         'nav.contact': 'contact',
+
+        'hero.greeting': 'Hello, I\'m',
+        'hero.name': 'Anatoliy Latyshev',
+        'hero.title1': 'I\'m a',
+        'hero.title2': 'Full-Stack Developer',
+        'hero.title3': 'specializing in',
+        'hero.title4': 'Modern Web Applications',
+        'hero.description': 'I develop digital products using React, Node.js, TypeScript, and Kotlin. I strive for clean code, user-friendly interfaces, and bringing ideas to life.',
+        'hero.cta': 'View My Work',
     },
     ru: {
         'nav.home': 'главная',
@@ -25,6 +34,15 @@ const translations = {
         'nav.skills': 'навыки',
         'nav.projects': 'проекты',
         'nav.contact': 'контакты',
+
+        'hero.greeting': 'Привет, я',
+        'hero.name': 'Анатолий Латышев',
+        'hero.title1': 'Я',
+        'hero.title2': 'Full-Stack Разработчик',
+        'hero.title3': 'специализируюсь на',
+        'hero.title4': 'Современных Веб-Приложениях',
+        'hero.description': 'Я разрабатываю цифровые продукты на React, Node.js, TypeScript и Kotlin. Стремлюсь к чистому коду, удобному интерфейсу и воплощению идей в жизнь.',
+        'hero.cta': 'Посмотреть работы',
     }
 };
 
