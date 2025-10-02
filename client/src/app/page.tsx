@@ -9,6 +9,7 @@ export default function Home() {
         <div className="dark min-h-screen bg-black text-white">
             <NavBar/>
             <HeroSection/>
+            <AboutSection/>
         </div>
       </LanguageProvider>
   );
