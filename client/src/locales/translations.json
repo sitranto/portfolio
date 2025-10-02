@@ -30,7 +30,10 @@
     "about.feature3.title": "Collaboration",
     "about.feature3.description": "Working effectively with teams to deliver exceptional user experiences.",
     "about.feature4.title": "Dedication",
-    "about.feature4.description": "Committed to continuous learning and staying current with industry trends."
+    "about.feature4.description": "Committed to continuous learning and staying current with industry trends.",
+
+    "skills.title": "Skills & Technologies",
+    "skills.description": "Here are the technologies and tools I use to developing"
   },
   "ru": {
     "nav.home": "главная",
@@ -63,6 +66,9 @@
     "about.feature3.title": "Сотрудничество",
     "about.feature3.description": "Эффективно работаю в команде для создания исключительного пользовательского опыта.",
     "about.feature4.title": "Преданность",
-    "about.feature4.description": "Постоянно учусь и слежу за актуальными трендами в индустрии."
+    "about.feature4.description": "Постоянно учусь и слежу за актуальными трендами в индустрии.",
+
+    "skills.title": "Навыки и технологии",
+    "skills.description": "Технологии и инструменты, которые я использую для разработки"
   }
 }
