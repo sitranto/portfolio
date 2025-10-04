@@ -46,7 +46,7 @@ export default function SkillsSection() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4"
+                    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 z-20"
                 >
                     {technologies.map((tech, _index) => {
                         const Icon = tech.icon
@@ -60,7 +60,7 @@ export default function SkillsSection() {
                                 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <Card className="relative p-6 bg-black/50 border-white/10 hover:border-[#339989]/50 transition-all duration-300 group overflow-hidden">
+                                <Card className="relative p-6 bg-black/50 border-white/10 hover:border-[#339989]/50 transition-all duration-300 group overflow-hidden z-30">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#339989]/0 to-[#7DE2D1]/0 group-hover:from-[#339989]/10 group-hover:to-[#7DE2D1]/5 transition-all duration-300"></div>
                                     <div className="absolute top-0 right-0 w-20 h-20 bg-[#7DE2D1]/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                     <div className="relative flex flex-col items-center justify-center space-y-3">
@@ -79,9 +79,9 @@ export default function SkillsSection() {
                     })}
                 </motion.div>
 
-                <div className="absolute top-20 left-10 w-2 h-2 bg-[#7DE2D1] rounded-full animate-pulse"></div>
-                <div className="absolute top-40 right-20 w-1 h-1 bg-[#339989] rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute bottom-20 left-1/3 w-1.5 h-1.5 bg-[#7DE2D1] rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute top-20 left-10 w-2 h-2 bg-[#7DE2D1] rounded-full animate-pulse z-0"></div>
+                <div className="absolute top-40 right-20 w-1 h-1 bg-[#339989] rounded-full animate-pulse z-0" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -bottom-10 right-1/3 w-1.5 h-1.5 bg-[#7DE2D1] rounded-full animate-pulse z-0" style={{ animationDelay: '2s' }}></div>
             </div>
         </section>
     );

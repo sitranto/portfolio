@@ -65,7 +65,7 @@ export function ContactSection() {
                     >
                         <Card className="p-8 bg-gray-900/50 border-white/10">
                             <h3 className="text-2xl text-white mb-6">{t('contact.formTitle')}</h3>
-                            <form className="space-y-6">
+                            <form className="space-y-9">
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <div>
                                         <label className="text-gray-300 text-sm mb-2 block">{t('contact.firstName')}</label>

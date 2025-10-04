@@ -103,7 +103,7 @@ export default function AboutSection() {
                                 transition={{ delay: index * 0.1, duration: 0.6 }}
                                 viewport={{ once: true }}
                             >
-                                <Card className="p-6 bg-black/50 border-white/10 hover:border-[#339989]/50 transition-all duration-300 group">
+                                <Card className="p-6 bg-black/50 border-white/10 hover:border-[#339989]/50 transition-all duration-300 group min-h-[230px]">
                                     <div className="text-[#7DE2D1] mb-4 group-hover:scale-110 transition-transform duration-300">
                                         <feature.icon className="w-8 h-8" />
                                     </div>
