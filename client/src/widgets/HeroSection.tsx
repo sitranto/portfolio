@@ -1,9 +1,10 @@
 'use client';
 
 import {motion} from "motion/react";
-import {ArrowDown, Github, Mail, Twitter} from "lucide-react";
+import {ArrowDown, Github, Mail} from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext'
 import Button from "@/ui/Button";
+import TelegramIcon from "@/ui/Icon";
 
 export default function HeroSection() {
     const { t } = useLanguage();
@@ -45,6 +46,56 @@ export default function HeroSection() {
                     />
                 ))}
             </div>
+
+            <div className="absolute inset-0">
+                {[...Array(20)].map((_, i) => (
+                    <motion.div
+                        key={`star-large-${i}`}
+                        className="absolute w-1 h-1 rounded-full"
+                        animate={{
+                            opacity: [0.4, 1, 0.4],
+                            scale: [1, 1.3, 1],
+                        }}
+                        transition={{
+                            duration: Math.random() * 5 + 4,
+                            repeat: Infinity,
+                            delay: Math.random() * 3
+                        }}
+                        style={{
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                            backgroundColor: '#339989',
+                            boxShadow: '0 0 20px #339989, 0 0 40px #7DE2D1'
+                        }}
+                    />
+                ))}
+            </div>
+
+            {[...Array(3)].map((_, i) => (
+                <motion.div
+                    key={`shooting-${i}`}
+                    className="absolute w-1 h-1 bg-[#7DE2D1] rounded-full"
+                    initial={{
+                        x: -100,
+                        y: Math.random() * 300,
+                        opacity: 0
+                    }}
+                    animate={{
+                        x: window.innerWidth + 100,
+                        y: Math.random() * 300 + 200,
+                        opacity: [0, 1, 0]
+                    }}
+                    transition={{
+                        duration: Math.random() * 2 + 1,
+                        repeat: Infinity,
+                        delay: Math.random() * 10 + i * 5,
+                        ease: "linear"
+                    }}
+                    style={{
+                        boxShadow: '0 0 10px #7DE2D1, -50px 0 30px #7DE2D1'
+                    }}
+                />
+            ))}
 
             <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
                 <motion.div
@@ -128,13 +179,14 @@ export default function HeroSection() {
 
                         <div className="flex items-center space-x-4">
                             {[
-                                { icon: Github, href: '#' },
-                                { icon: Twitter, href: '#' },
-                                { icon: Mail, href: '#' }
+                                { icon: Github, href: 'https://github.com/sitranto' },
+                                { icon: TelegramIcon, href: 'https://t.me/sitranto' },
+                                { icon: Mail, href: 'mailto://anatoliyl2006@gmail.com' }
                             ].map(({ icon: Icon, href }, index) => (
                                 <motion.a
                                     key={index}
                                     href={href}
+                                    target={`_blank`}
                                     initial={{ opacity: 0, scale: 0 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 1.2 + index * 0.1 }}
@@ -149,21 +201,21 @@ export default function HeroSection() {
                         </div>
                     </motion.div>
                 </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5 }}
-                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-                >
-                    <motion.div
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="text-[#7DE2D1]/60"
-                    >
-                    </motion.div>
-                </motion.div>
             </div>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5 }}
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            >
+                <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="text-[#7DE2D1]/60"
+                >
+                    <ArrowDown className="w-8 h-8" />
+                </motion.div>
+            </motion.div>
         </section>
     );
 }

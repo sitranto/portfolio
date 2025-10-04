@@ -2,7 +2,7 @@
 
 import {Language} from "@/types/main";
 import {createContext, ReactNode, useContext, useState} from "react";
-import translations from "@/locales/translations.json";
+import translations from "../../public/locales/translations.json";
 
 interface LanguageContextProps {
     language: Language,

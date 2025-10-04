@@ -5,8 +5,9 @@ import Card from '@/ui/Card'
 import Button from '@/ui/Button'
 import Input from '@/ui/Input'
 import TextArea from '@/ui/TextArea'
-import { Github, Mail, Twitter, MapPin, Phone } from 'lucide-react'
+import { Github, Mail, MapPin, Phone } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import TelegramIcon from "@/ui/Icon";
 
 export function ContactSection() {
     const { t } = useLanguage()
@@ -33,9 +34,9 @@ export function ContactSection() {
     ]
 
     const socialLinks = [
-        { icon: Github, href: '#', label: 'GitHub' },
-        { icon: Twitter, href: '#', label: 'Twitter' },
-        { icon: Mail, href: '#', label: 'Email' }
+        { icon: Github, href: 'https://github.com/sitranto', label: 'GitHub' },
+        { icon: TelegramIcon, href: 'https:/t.me/sitranto', label: 'Twitter' },
+        { icon: Mail, href: 'mailto:anatoliyl2006@gmail.com', label: 'Email' }
     ]
 
     return (
@@ -158,6 +159,7 @@ export function ContactSection() {
                                     <motion.a
                                         key={index}
                                         href={social.href}
+                                        target={`_blank`}
                                         initial={{ opacity: 0, scale: 0 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         transition={{ delay: index * 0.1, duration: 0.3 }}
