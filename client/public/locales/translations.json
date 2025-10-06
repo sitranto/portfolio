@@ -79,7 +79,7 @@
     "contact.lastName": "Фамилия",
     "contact.lastNamePlaceholder": "Ваша фамилия",
     "contact.email": "Email",
-    "contact.emailPlaceholder": "ваш.email@example.com",
+    "contact.emailPlaceholder": "Ваш Email",
     "contact.subject": "Тема",
     "contact.subjectPlaceholder": "Обсуждение проекта",
     "contact.message": "Сообщение",
@@ -89,7 +89,6 @@
     "contact.connectDescription": "В настоящее время я доступен для фриланс-работы и частичной занятости. Есть ли у вас есть проект или просто хотите поговорить о технологиях, я буду рад поговорить с вами.",
     "contact.followMe": "Давайте сотрудничать",
     "contact.phone.label": "Телефон",
-    "contact.phone.value": "+7 (993) 976-13-23",
     "contact.location.label": "Местоположение",
     "contact.location.value": "Санкт-Петербург, Россия",
     "contact.footer": "© 2025 Анатолий Латышев. Разработано с ❤️ используя Next.js и Tailwind CSS."

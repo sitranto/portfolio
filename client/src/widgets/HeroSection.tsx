@@ -5,9 +5,18 @@ import {ArrowDown, Github, Mail} from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext'
 import Button from "@/ui/Button";
 import TelegramIcon from "@/ui/Icon";
+import constants from "@/lib/constants.json";
+import {useEffect, useState} from "react";
 
 export default function HeroSection() {
     const { t } = useLanguage();
+    const [windowWidth, setWindowWidth] = useState(0);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setWindowWidth(window.innerWidth);
+        setIsMounted(true);
+    }, []);
 
     const scrollToProjects = () => {
         const element = document.getElementById('projects')
@@ -24,78 +33,87 @@ export default function HeroSection() {
                 <div className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-purple-500 rounded-full opacity-5 blur-[90px] animate-pulse" style={{ animationDelay: '2s' }}></div>
             </div>
 
-            <div className="absolute inset-0">
-                {[...Array(100)].map((_, i) => (
-                    <motion.div
-                        key={`star-small-${i}`}
-                        className="absolute w-[2px] h-[2px] bg-white rounded-full"
-                        initial={{ opacity: 0 }}
-                        animate={{
-                            opacity: [0, 1, 0],
-                            scale: [0, 1, 0]
-                        }}
-                        transition={{
-                            duration: Math.random() * 3 + 2,
-                            repeat: Infinity,
-                            delay: Math.random() * 3
-                        }}
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`
-                        }}
-                    />
-                ))}
-            </div>
+            {isMounted && (
+                <div className="absolute inset-0">
+                    {[...Array(100)].map((_, i) => (
+                        <motion.div
+                            key={`star-small-${i}`}
+                            className="absolute w-[2px] h-[2px] bg-white rounded-full"
+                            initial={{ opacity: 0 }}
+                            animate={{
+                                opacity: [0, 1, 0],
+                                scale: [0, 1, 0]
+                            }}
+                            transition={{
+                                duration: Math.random() * 3 + 2,
+                                repeat: Infinity,
+                                delay: Math.random() * 3
+                            }}
+                            style={{
+                                left: `${Math.random() * 100}%`,
+                                top: `${Math.random() * 100}%`
+                            }}
+                        />
+                    ))}
+                </div>
+            )}
 
-            <div className="absolute inset-0">
-                {[...Array(20)].map((_, i) => (
-                    <motion.div
-                        key={`star-large-${i}`}
-                        className="absolute w-1 h-1 rounded-full"
-                        animate={{
-                            opacity: [0.4, 1, 0.4],
-                            scale: [1, 1.3, 1],
-                        }}
-                        transition={{
-                            duration: Math.random() * 5 + 4,
-                            repeat: Infinity,
-                            delay: Math.random() * 3
-                        }}
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            backgroundColor: '#339989',
-                            boxShadow: '0 0 20px #339989, 0 0 40px #7DE2D1'
-                        }}
-                    />
-                ))}
-            </div>
+            {isMounted && (
+                <div className="absolute inset-0">
+                    {[...Array(20)].map((_, i) => (
+                        <motion.div
+                            key={`star-large-${i}`}
+                            className="absolute w-1 h-1 rounded-full"
+                            animate={{
+                                opacity: [0.4, 1, 0.4],
+                                scale: [1, 1.3, 1],
+                            }}
+                            transition={{
+                                duration: Math.random() * 5 + 4,
+                                repeat: Infinity,
+                                delay: Math.random() * 3
+                            }}
+                            style={{
+                                left: `${Math.random() * 100}%`,
+                                top: `${Math.random() * 100}%`,
+                                backgroundColor: '#339989',
+                                boxShadow: '0 0 20px #339989, 0 0 40px #7DE2D1'
+                            }}
+                        />
+                    ))}
+                </div>
+            )}
 
-            {[...Array(3)].map((_, i) => (
-                <motion.div
-                    key={`shooting-${i}`}
-                    className="absolute w-1 h-1 bg-[#7DE2D1] rounded-full"
-                    initial={{
-                        x: -100,
-                        y: Math.random() * 300,
-                        opacity: 0
-                    }}
-                    animate={{
-                        x: window.innerWidth + 100,
-                        y: Math.random() * 300 + 200,
-                        opacity: [0, 1, 0]
-                    }}
-                    transition={{
-                        duration: Math.random() * 2 + 1,
-                        repeat: Infinity,
-                        delay: Math.random() * 10 + i * 5,
-                        ease: "linear"
-                    }}
-                    style={{
-                        boxShadow: '0 0 10px #7DE2D1, -50px 0 30px #7DE2D1'
-                    }}
-                />
-            ))}
+            {isMounted && (
+                <div className="absolute inset-0">
+                    {[...Array(3)].map((_, i) => (
+                        <motion.div
+                            key={`shooting-${i}`}
+                            className="absolute w-1 h-1 bg-[#7DE2D1] rounded-full"
+                            initial={{
+                                x: -100,
+                                y: Math.random() * 300,
+                                opacity: 0
+                            }}
+                            animate={{
+                                x: windowWidth + 100,
+                                y: Math.random() * 300 + 200,
+                                opacity: [0, 1, 0]
+                            }}
+                            transition={{
+                                duration: Math.random() * 2 + 1,
+                                repeat: Infinity,
+                                delay: Math.random() * 10 + i * 5,
+                                ease: "linear"
+                            }}
+                            style={{
+                                boxShadow: '0 0 10px #7DE2D1, -50px 0 30px #7DE2D1'
+                            }}
+                        />
+                    ))}
+                </div>
+            )}
+
 
             <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
                 <motion.div
@@ -179,9 +197,9 @@ export default function HeroSection() {
 
                         <div className="flex items-center space-x-4">
                             {[
-                                { icon: Github, href: 'https://github.com/sitranto' },
-                                { icon: TelegramIcon, href: 'https://t.me/sitranto' },
-                                { icon: Mail, href: 'mailto://anatoliyl2006@gmail.com' }
+                                { icon: Github, href: constants.links.github },
+                                { icon: TelegramIcon, href: constants.links.telegram },
+                                { icon: Mail, href: constants.links.mail },
                             ].map(({ icon: Icon, href }, index) => (
                                 <motion.a
                                     key={index}

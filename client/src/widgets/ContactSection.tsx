@@ -8,6 +8,7 @@ import TextArea from '@/ui/TextArea'
 import { Github, Mail, MapPin, Phone } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import TelegramIcon from "@/ui/Icon";
+import constants from "@/lib/constants.json";
 
 export function ContactSection() {
     const { t } = useLanguage()
@@ -17,26 +18,26 @@ export function ContactSection() {
             icon: Mail,
             label: t('Email'),
             value: t('anatoliyl2006@gmail.com'),
-            href: 'mailto:anatoliyl2006@gmail.com'
+            href: constants.links.mail
         },
         {
             icon: Phone,
             label: t('contact.phone.label'),
-            value: t('contact.phone.value'),
-            href: 'tel:+79991234567'
+            value: constants.phone,
+            href: constants.links.phone
         },
         {
             icon: MapPin,
             label: t('contact.location.label'),
             value: t('contact.location.value'),
-            href: '#'
+            href: constants.links.location
         }
     ]
 
     const socialLinks = [
-        { icon: Github, href: 'https://github.com/sitranto', label: 'GitHub' },
-        { icon: TelegramIcon, href: 'https:/t.me/sitranto', label: 'Twitter' },
-        { icon: Mail, href: 'mailto:anatoliyl2006@gmail.com', label: 'Email' }
+        { icon: Github, href: constants.links.github, label: 'GitHub' },
+        { icon: TelegramIcon, href: constants.links.telegram, label: 'Twitter' },
+        { icon: Mail, href: constants.links.mail, label: 'Email' }
     ]
 
     return (
@@ -135,6 +136,7 @@ export function ContactSection() {
                                 <motion.a
                                     key={index}
                                     href={info.href}
+                                    target="_blank"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.1, duration: 0.6 }}

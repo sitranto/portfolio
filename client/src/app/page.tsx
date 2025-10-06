@@ -4,6 +4,7 @@ import HeroSection from "@/widgets/HeroSection";
 import AboutSection from "@/widgets/AboutSection";
 import SkillsSection from "@/widgets/SkillsSection";
 import {ContactSection} from "@/widgets/ContactSection";
+import {ProjectsSection} from "@/widgets/ProjectsSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
             <HeroSection/>
             <AboutSection/>
             <SkillsSection/>
+            <ProjectsSection/>
             <ContactSection/>
         </div>
       </LanguageProvider>
