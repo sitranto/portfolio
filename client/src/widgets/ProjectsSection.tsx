@@ -6,6 +6,7 @@ import Button from '@/ui/Button'
 import { ExternalLink, Github } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import {Project} from "@/types/main";
+import Image from "next/image";
 
 export function ProjectsSection() {
     const { t } = useLanguage()
@@ -44,7 +45,7 @@ export function ProjectsSection() {
                         >
                             <Card className="group bg-black/50 border-white/10 overflow-hidden hover:border-[#339989]/50 transition-all duration-500">
                                 <div className="relative overflow-hidden">
-                                    <img
+                                    <Image
                                         src={project.imageId}
                                         alt={project.title}
                                         className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -115,7 +116,7 @@ export function ProjectsSection() {
                         >
                             <Card className="group bg-black/30 border-white/10 hover:border-white/30 transition-all duration-300 h-full">
                                 <div className="relative overflow-hidden">
-                                    <img
+                                    <Image
                                         src={project.imageId}
                                         alt={project.title}
                                         className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"

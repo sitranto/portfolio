@@ -2,7 +2,7 @@
 
 import {useLanguage} from "@/context/LanguageContext";
 import {motion} from "motion/react";
-import {Code2, FileCode, Layers, Server, Palette, Terminal, Boxes, GitBranch, Cloud, Box, Sparkles, Database} from "lucide-react";
+import {Code2, FileCode, Layers, Server, Palette, GitBranch, Box, Database} from "lucide-react";
 import Card from "@/ui/Card";
 
 export default function SkillsSection() {
