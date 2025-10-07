@@ -1,6 +1,5 @@
 'use client';
 
-import {motion} from "motion/react";
 import {ArrowDown, Github, Mail} from "lucide-react";
 import { useLanguage } from '@/context/LanguageContext'
 import Button from "@/ui/Button";
@@ -10,11 +9,9 @@ import {useEffect, useState} from "react";
 
 export default function HeroSection() {
     const { t } = useLanguage();
-    const [windowWidth, setWindowWidth] = useState(0);
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setWindowWidth(window.innerWidth);
         setIsMounted(true);
     }, []);
 
@@ -35,23 +32,15 @@ export default function HeroSection() {
 
             {isMounted && (
                 <div className="absolute inset-0">
-                    {[...Array(100)].map((_, i) => (
-                        <motion.div
+                    {[...Array(50)].map((_, i) => (
+                        <div
                             key={`star-small-${i}`}
-                            className="absolute w-[2px] h-[2px] bg-white rounded-full"
-                            initial={{ opacity: 0 }}
-                            animate={{
-                                opacity: [0, 1, 0],
-                                scale: [0, 1, 0]
-                            }}
-                            transition={{
-                                duration: Math.random() * 3 + 2,
-                                repeat: Infinity,
-                                delay: Math.random() * 3
-                            }}
+                            className="absolute w-[2px] h-[2px] bg-white rounded-full animate-fade-pulse"
                             style={{
                                 left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`
+                                top: `${Math.random() * 100}%`,
+                                animationDuration: `${Math.random() * 3 + 2}s`,
+                                animationDelay: `${Math.random() * 3}s`,
                             }}
                         />
                     ))}
@@ -60,22 +49,15 @@ export default function HeroSection() {
 
             {isMounted && (
                 <div className="absolute inset-0">
-                    {[...Array(20)].map((_, i) => (
-                        <motion.div
+                    {[...Array(15)].map((_, i) => (
+                        <div
                             key={`star-large-${i}`}
-                            className="absolute w-1 h-1 rounded-full"
-                            animate={{
-                                opacity: [0.4, 1, 0.4],
-                                scale: [1, 1.3, 1],
-                            }}
-                            transition={{
-                                duration: Math.random() * 5 + 4,
-                                repeat: Infinity,
-                                delay: Math.random() * 3
-                            }}
+                            className="absolute w-1 h-1 rounded-full animate-fade-pulse"
                             style={{
                                 left: `${Math.random() * 100}%`,
                                 top: `${Math.random() * 100}%`,
+                                animationDuration: `${Math.random() * 5 + 4}s`,
+                                animationDelay: `${Math.random() * 3}s`,
                                 backgroundColor: '#339989',
                                 boxShadow: '0 0 20px #339989, 0 0 40px #7DE2D1'
                             }}
@@ -87,28 +69,14 @@ export default function HeroSection() {
             {isMounted && (
                 <div className="absolute inset-0">
                     {[...Array(3)].map((_, i) => (
-                        <motion.div
-                            key={`shooting-${i}`}
-                            className="absolute w-1 h-1 bg-[#7DE2D1] rounded-full"
-                            initial={{
-                                x: -100,
-                                y: Math.random() * 300,
-                                opacity: 0
-                            }}
-                            animate={{
-                                x: windowWidth + 100,
-                                y: Math.random() * 300 + 200,
-                                opacity: [0, 1, 0]
-                            }}
-                            transition={{
-                                duration: Math.random() * 2 + 1,
-                                repeat: Infinity,
-                                delay: Math.random() * 10 + i * 5,
-                                ease: "linear"
-                            }}
-                            style={{
-                                boxShadow: '0 0 10px #7DE2D1, -50px 0 30px #7DE2D1'
-                            }}
+                        <div key={`shooting-${i}`}
+                             className="absolute w-1 h-1 bg-[#7DE2D1] rounded-full animate-shooting-star"
+                             style={{
+                                 top: `${Math.random() * 300}px`,
+                                 boxShadow: '0 0 10px #7DE2D1, -50px 0 30px #7DE2D1',
+                                 ['--duration' as string]: `${Math.random() * 2 + 1}s`,
+                                 ['--delay' as string]: `${Math.random() * 5 + i * 5}s`
+                             }}
                         />
                     ))}
                 </div>
@@ -116,39 +84,20 @@ export default function HeroSection() {
 
 
             <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="space-y-6"
-                >
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-[#7DE2D1] text-lg tracking-wider"
-                    >
+                <div className="space-y-6">
+                    <p className="text-[#7DE2D1] text-lg tracking-wider animate-fade-in delay-200">
                         {t('hero.greeting')}
-                    </motion.p>
+                    </p>
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="text-5xl md:text-7xl text-[#FFFAFB] mb-6"
+                    <h1 className="text-5xl md:text-7xl text-[#FFFAFB] mb-6 animate-fade-in-up delay-400"
                         style={{
                             textShadow: '0 0 30px rgba(125, 226, 209, 0.3)'
                         }}
                     >
                         {t('hero.name')}
-                    </motion.h1>
+                    </h1>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                        className="text-2xl md:text-4xl text-gray-300 mb-8"
-                    >
+                    <div className="text-2xl md:text-4xl text-gray-300 mb-8 animate-fade-in-up delay-600">
                         {t('hero.title1')}{' '}
                         <span
                             className="text-transparent bg-clip-text bg-gradient-to-r from-[#339989] to-[#7DE2D1]"
@@ -168,23 +117,13 @@ export default function HeroSection() {
                         >
               {t('hero.title4')}
             </span>
-                    </motion.div>
+                    </div>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8 }}
-                        className="text-gray-400 text-lg max-w-2xl mx-auto mb-8"
-                    >
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8 animate-fade-in-up delay-800">
                         {t('hero.description')}
-                    </motion.p>
+                    </p>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-6"
-                    >
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up delay-1000">
                         <Button
                             onClick={scrollToProjects}
                             className="bg-[#339989] hover:bg-[#2a7d72] text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
@@ -201,39 +140,26 @@ export default function HeroSection() {
                                 { icon: TelegramIcon, href: constants.links.telegram },
                                 { icon: Mail, href: constants.links.mail },
                             ].map(({ icon: Icon, href }, index) => (
-                                <motion.a
-                                    key={index}
+                                <a key={index}
                                     href={href}
                                     target={`_blank`}
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 1.2 + index * 0.1 }}
-                                    className="w-12 h-12 bg-white/5 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7DE2D1] hover:bg-[#339989]/20 hover:text-[#FFFAFB] transition-all duration-300 hover:scale-110 border border-[#339989]/20"
+                                    className={`w-12 h-12 bg-white/5 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7DE2D1] hover:bg-[#339989]/20 hover:text-[#FFFAFB] transition-all duration-300 hover:scale-110 border border-[#339989]/20 animate-scale-in delay-1200`}
                                     style={{
                                         boxShadow: '0 0 15px rgba(51, 153, 137, 0.2)'
                                     }}
                                 >
                                     <Icon className="w-5 h-5" />
-                                </motion.a>
+                                </a>
                             ))}
                         </div>
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
             </div>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5 }}
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-            >
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="text-[#7DE2D1]/60"
-                >
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in delay-1500">
+                <div className="text-[#7DE2D1]/60 animate-float">
                     <ArrowDown className="w-8 h-8" />
-                </motion.div>
-            </motion.div>
+                </div>
+            </div>
         </section>
     );
 }

@@ -48,7 +48,7 @@ export default function SkillsSection() {
                     viewport={{ once: true }}
                     className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 z-20"
                 >
-                    {technologies.map((tech, _index) => {
+                    {technologies.map((tech, _) => {
                         const Icon = tech.icon
                         return (
                             <motion.div
