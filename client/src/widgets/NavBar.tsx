@@ -46,7 +46,7 @@ export default function NavBar() {
                         transition={{ delay: 0.2 }}
                         className="text-white text-xl font-medium"
                     >
-                        &lt;Sitranto /&gt;
+                        {'<Sitranto />'}
                     </motion.div>
 
                     <div className="hidden md:flex items-center space-x-8">

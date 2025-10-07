@@ -37,7 +37,7 @@ export function ProjectsSection() {
                 <div className="grid lg:grid-cols-2 gap-8 mb-16">
                     {featuredProjects.map((project, index) => (
                         <motion.div
-                            key={index}
+                            key={project.id}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.2, duration: 0.8 }}
@@ -48,12 +48,15 @@ export function ProjectsSection() {
                                     <Image
                                         src={project.imageId}
                                         alt={project.title}
+                                        width={800}
+                                        height={500}
                                         className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
                                     <div className="absolute top-4 right-4 flex space-x-2">
                                         <motion.a
                                             href={project.github}
+                                            target={`_blank`}
                                             whileHover={{ scale: 1.1 }}
                                             whileTap={{ scale: 0.95 }}
                                             className="w-10 h-10 bg-black/70 rounded-full flex items-center justify-center text-white hover:bg-[#339989] transition-all duration-300"
@@ -62,6 +65,7 @@ export function ProjectsSection() {
                                         </motion.a>
                                         <motion.a
                                             href={project.live}
+                                            target={`_blank`}
                                             whileHover={{ scale: 1.1 }}
                                             whileTap={{ scale: 0.95 }}
                                             className="w-10 h-10 bg-black/70 rounded-full flex items-center justify-center text-white hover:bg-[#339989] transition-all duration-300"
@@ -119,18 +123,22 @@ export function ProjectsSection() {
                                     <Image
                                         src={project.imageId}
                                         alt={project.title}
+                                        width={800}
+                                        height={500}
                                         className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
                                     <div className="absolute inset-0 bg-black/40"></div>
                                     <div className="absolute top-3 right-3 flex space-x-2">
                                         <a
                                             href={project.github}
+                                            target={`_blank`}
                                             className="w-8 h-8 bg-black/70 rounded-full flex items-center justify-center text-white hover:bg-[#339989] transition-all duration-300"
                                         >
                                             <Github className="w-4 h-4" />
                                         </a>
                                         <a
                                             href={project.live}
+                                            target={`_blank`}
                                             className="w-8 h-8 bg-black/70 rounded-full flex items-center justify-center text-white hover:bg-[#339989] transition-all duration-300"
                                         >
                                             <ExternalLink className="w-4 h-4" />
