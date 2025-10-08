@@ -49,19 +49,21 @@ export default function NavBar() {
                         {'<Sitranto />'}
                     </motion.div>
 
-                    <div className="hidden md:flex items-center space-x-8">
-                        {['home', 'about', 'skills', 'projects', 'contact'].map((item, index) => (
-                            <motion.button
-                                key={item}
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 * index }}
-                                onClick={() => scrollToSection(item)}
-                                className="text-gray-300 hover:text-[#7DE2D1] transition-colors duration-200 capitalize"
-                            >
-                                {t(`nav.${item}`)}
-                            </motion.button>
-                        ))}
+                    <div className="flex gap-8">
+                        <div className="hidden md:flex items-center space-x-8">
+                            {['home', 'about', 'skills', 'projects', 'contact'].map((item, index) => (
+                                <motion.button
+                                    key={item}
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.1 * index }}
+                                    onClick={() => scrollToSection(item)}
+                                    className=" text-gray-300 hover:text-[#7DE2D1] transition-colors duration-200 capitalize"
+                                >
+                                    {t(`nav.${item}`)}
+                                </motion.button>
+                            ))}
+                        </div>
 
                         <motion.button
                             initial={{ opacity: 0, y: -20 }}
