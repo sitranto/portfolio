@@ -11,5 +11,5 @@ data class Project(
     val isLive: Boolean?,
     val live: String?,
     val featured: Boolean,
-    val imageId: UUID,
+    val imageId: UUID
 )
