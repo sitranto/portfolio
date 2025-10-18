@@ -16,7 +16,7 @@ import ru.sitranto.service.ProjectService
 import java.util.UUID
 
 fun Route.projectRoutes(service: ProjectService) {
-    route("/api/projects") {
+    route("/projects") {
         get {
             val list = service.list().map { it.toDto() }
             call.respond(list)
