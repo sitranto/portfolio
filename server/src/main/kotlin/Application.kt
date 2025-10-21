@@ -14,6 +14,7 @@ import ru.sitranto.repo.impl.InMemoryProjectRepo
 import ru.sitranto.service.PicServiceImpl
 import ru.sitranto.service.ProjectService
 import ru.sitranto.storage.FileStorage
+import ru.sitranto.utils.ApiKeyAuth
 import java.io.File
 
 fun main(args: Array<String>) {
@@ -36,6 +37,7 @@ fun Application.module() {
             call.respondText("Internal server error", status = io.ktor.http.HttpStatusCode.InternalServerError)
         }
     }
+    install(ApiKeyAuth)
     install(DI)
 
     dependencies {
