@@ -1,24 +1,21 @@
 'use client'
 
 import { motion } from 'motion/react'
-import Card from '@/ui/Card'
-import Button from '@/ui/Button'
-import Input from '@/ui/Input'
-import TextArea from '@/ui/TextArea'
 import { Github, Mail, MapPin, Phone } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import TelegramIcon from "@/ui/Icon";
 import constants from "@/lib/constants.json";
+import MessageForm from "@/components/MessageForm";
 
 export function ContactSection() {
-    const { t } = useLanguage()
+    const { t } = useLanguage();
 
     const contactInfo = [
         {
             icon: Mail,
             label: t('Email'),
             value: t('anatoliyl2006@gmail.com'),
-            href: constants.links.mail
+            href: `mailto:${constants.links.mail}`
         },
         {
             icon: Phone,
@@ -37,7 +34,7 @@ export function ContactSection() {
     const socialLinks = [
         { icon: Github, href: constants.links.github, label: 'GitHub' },
         { icon: TelegramIcon, href: constants.links.telegram, label: 'Twitter' },
-        { icon: Mail, href: constants.links.mail, label: 'Email' }
+        { icon: Mail, href: `mailto:${constants.links.mail}`, label: 'Email' }
     ]
 
     return (
@@ -64,57 +61,7 @@ export function ContactSection() {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <Card className="p-8 bg-gray-900/50 border-white/10">
-                            <h3 className="text-2xl text-white mb-6">{t('contact.formTitle')}</h3>
-                            <form className="space-y-9">
-                                <div className="grid md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="text-gray-300 text-sm mb-2 block">{t('contact.firstName')}</label>
-                                        <Input
-                                            placeholder={t('contact.firstNamePlaceholder')}
-                                            className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-[#339989]"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="text-gray-300 text-sm mb-2 block">{t('contact.lastName')}</label>
-                                        <Input
-                                            placeholder={t('contact.lastNamePlaceholder')}
-                                            className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-[#339989]"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="text-gray-300 text-sm mb-2 block">{t('contact.email')}</label>
-                                    <Input
-                                        type="email"
-                                        placeholder={t('contact.emailPlaceholder')}
-                                        className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-[#339989]"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="text-gray-300 text-sm mb-2 block">{t('contact.subject')}</label>
-                                    <Input
-                                        placeholder={t('contact.subjectPlaceholder')}
-                                        className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-[#339989]"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="text-gray-300 text-sm mb-2 block">{t('contact.message')}</label>
-                                    <TextArea
-                                        placeholder={t('contact.messagePlaceholder')}
-                                        rows={5}
-                                        className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-[#339989] resize-none"
-                                    />
-                                </div>
-
-                                <Button className="w-full bg-[#339989] hover:bg-[#2a7d72] text-white py-3">
-                                    {t('contact.send')}
-                                </Button>
-                            </form>
-                        </Card>
+                        <MessageForm />
                     </motion.div>
 
                     <motion.div
