@@ -138,7 +138,7 @@ export default function HeroSection() {
                             {[
                                 { icon: Github, href: constants.links.github },
                                 { icon: TelegramIcon, href: constants.links.telegram },
-                                { icon: Mail, href: constants.links.mail },
+                                { icon: Mail, href: `mailto:${constants.links.mail}` },
                             ].map(({ icon: Icon, href }, index) => (
                                 <a key={index}
                                     href={href}
